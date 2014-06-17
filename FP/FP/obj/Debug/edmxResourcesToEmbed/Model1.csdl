@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HospitalEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="HospitalModel.Admin" />
+    <EntitySet Name="Kamars" EntityType="HospitalModel.Kamar" />
+    <EntitySet Name="Patients" EntityType="HospitalModel.Patient" />
+    <EntitySet Name="Pegawais" EntityType="HospitalModel.Pegawai" />
+    <EntitySet Name="Periksas" EntityType="HospitalModel.Periksa" />
+    <AssociationSet Name="FK_Admin_Pegawai" Association="HospitalModel.FK_Admin_Pegawai">
+      <End Role="Pegawai" EntitySet="Pegawais" />
+      <End Role="Admin" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Kamar" Association="HospitalModel.FK_Patient_Kamar">
+      <End Role="Kamar" EntitySet="Kamars" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Pegawai" Association="HospitalModel.FK_Patient_Pegawai">
+      <End Role="Pegawai" EntitySet="Pegawais" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Periksa_Patient" Association="HospitalModel.FK_Periksa_Patient">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Periksa" EntitySet="Periksas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Periksa_Pegawai" Association="HospitalModel.FK_Periksa_Pegawai">
+      <End Role="Pegawai" EntitySet="Pegawais" />
+      <End Role="Periksa" EntitySet="Periksas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id_Admin" />
+    </Key>
+    <Property Name="Id_Admin" Type="Int32" Nullable="false" />
+    <Property Name="Id_pegawai" Type="Int32" />
+    <Property Name="User_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Pegawai" Relationship="HospitalModel.FK_Admin_Pegawai" FromRole="Admin" ToRole="Pegawai" />
+  </EntityType>
+  <EntityType Name="Kamar">
+    <Key>
+      <PropertyRef Name="Id_Room" />
+    </Key>
+    <Property Name="Id_Room" Type="Int32" Nullable="false" />
+    <Property Name="Nama_Kamar" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Harga_Sewa" Type="Int32" Nullable="false" />
+    <Property Name="Status_Kamar" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="HospitalModel.FK_Patient_Kamar" FromRole="Kamar" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id_Pasien" />
+    </Key>
+    <Property Name="Id_Pasien" Type="Int32" Nullable="false" />
+    <Property Name="ID_Pegawai" Type="Int32" />
+    <Property Name="ID_Room" Type="Int32" />
+    <Property Name="Nama_Pasien" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Penyakit" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Jenis_pasien" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Golongan_Darah" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Jenis_Kelamin" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Tgl_Lahir" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Alamat_Pasien" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Kota_Pasien" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="No_KTP" Type="Int32" />
+    <Property Name="No_Hp" Type="Int32" />
+    <Property Name="Pekerjaan" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Tgl_Masuk" Type="DateTime" Precision="0" />
+    <Property Name="Tgl_Keluar" Type="DateTime" Precision="0" />
+    <Property Name="Tarif_total" Type="Int32" />
+    <NavigationProperty Name="Kamar" Relationship="HospitalModel.FK_Patient_Kamar" FromRole="Patient" ToRole="Kamar" />
+    <NavigationProperty Name="Pegawai" Relationship="HospitalModel.FK_Patient_Pegawai" FromRole="Patient" ToRole="Pegawai" />
+    <NavigationProperty Name="Periksas" Relationship="HospitalModel.FK_Periksa_Patient" FromRole="Patient" ToRole="Periksa" />
+  </EntityType>
+  <EntityType Name="Pegawai">
+    <Key>
+      <PropertyRef Name="ID_Pegawai" />
+    </Key>
+    <Property Name="ID_Pegawai" Type="Int32" Nullable="false" />
+    <Property Name="Jenis_Pegawai" Type="Binary" Nullable="false" MaxLength="50" FixedLength="false" />
+    <Property Name="Nama_Pegawai" Type="Binary" Nullable="false" MaxLength="50" FixedLength="false" />
+    <Property Name="Alamat_Pegawai" Type="Binary" Nullable="false" MaxLength="50" FixedLength="false" />
+    <Property Name="Telp_Pegawai" Type="Int32" />
+    <Property Name="Kota" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Admins" Relationship="HospitalModel.FK_Admin_Pegawai" FromRole="Pegawai" ToRole="Admin" />
+    <NavigationProperty Name="Patients" Relationship="HospitalModel.FK_Patient_Pegawai" FromRole="Pegawai" ToRole="Patient" />
+    <NavigationProperty Name="Periksas" Relationship="HospitalModel.FK_Periksa_Pegawai" FromRole="Pegawai" ToRole="Periksa" />
+  </EntityType>
+  <EntityType Name="Periksa">
+    <Key>
+      <PropertyRef Name="No_Pemeriksaan" />
+    </Key>
+    <Property Name="No_Pemeriksaan" Type="Int32" Nullable="false" />
+    <Property Name="id_Pegawai" Type="Int32" />
+    <Property Name="id_Pasien" Type="Int32" />
+    <Property Name="Penyakit_Akhir" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Tarif" Type="Int32" Nullable="false" />
+    <Property Name="Status_Rawat" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Patient" Relationship="HospitalModel.FK_Periksa_Patient" FromRole="Periksa" ToRole="Patient" />
+    <NavigationProperty Name="Pegawai" Relationship="HospitalModel.FK_Periksa_Pegawai" FromRole="Periksa" ToRole="Pegawai" />
+  </EntityType>
+  <Association Name="FK_Admin_Pegawai">
+    <End Role="Pegawai" Type="HospitalModel.Pegawai" Multiplicity="0..1" />
+    <End Role="Admin" Type="HospitalModel.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pegawai">
+        <PropertyRef Name="ID_Pegawai" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="Id_pegawai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Kamar">
+    <End Role="Kamar" Type="HospitalModel.Kamar" Multiplicity="0..1" />
+    <End Role="Patient" Type="HospitalModel.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kamar">
+        <PropertyRef Name="Id_Room" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Pegawai">
+    <End Role="Pegawai" Type="HospitalModel.Pegawai" Multiplicity="0..1" />
+    <End Role="Patient" Type="HospitalModel.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pegawai">
+        <PropertyRef Name="ID_Pegawai" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Pegawai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Periksa_Patient">
+    <End Role="Patient" Type="HospitalModel.Patient" Multiplicity="0..1" />
+    <End Role="Periksa" Type="HospitalModel.Periksa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="Id_Pasien" />
+      </Principal>
+      <Dependent Role="Periksa">
+        <PropertyRef Name="id_Pasien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Periksa_Pegawai">
+    <End Role="Pegawai" Type="HospitalModel.Pegawai" Multiplicity="0..1" />
+    <End Role="Periksa" Type="HospitalModel.Periksa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pegawai">
+        <PropertyRef Name="ID_Pegawai" />
+      </Principal>
+      <Dependent Role="Periksa">
+        <PropertyRef Name="id_Pegawai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

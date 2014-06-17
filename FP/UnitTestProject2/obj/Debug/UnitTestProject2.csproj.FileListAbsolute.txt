@@ -1,0 +1,10 @@
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\bin\Debug\UnitTestProject2.dll
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\bin\Debug\UnitTestProject2.pdb
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\bin\Debug\FP.exe
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\bin\Debug\EntityFramework.dll
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\bin\Debug\FP.pdb
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\bin\Debug\EntityFramework.xml
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\obj\Debug\UnitTestProject2.csprojResolveAssemblyReference.cache
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\obj\Debug\UnitTestProject2.dll
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\obj\Debug\UnitTestProject2.pdb
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\UnitTestProject2\bin\Debug\UnitTestProject2.dll.config

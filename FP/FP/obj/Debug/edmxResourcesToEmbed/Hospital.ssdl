@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HospitalModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="HospitalModel.Store.Admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kamar" EntityType="HospitalModel.Store.Kamar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Patient" EntityType="HospitalModel.Store.Patient" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pegawai" EntityType="HospitalModel.Store.Pegawai" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Periksa" EntityType="HospitalModel.Store.Periksa" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Admin_Pegawai" Association="HospitalModel.Store.FK_Admin_Pegawai">
+      <End Role="Pegawai" EntitySet="Pegawai" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Kamar" Association="HospitalModel.Store.FK_Patient_Kamar">
+      <End Role="Kamar" EntitySet="Kamar" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Pegawai" Association="HospitalModel.Store.FK_Patient_Pegawai">
+      <End Role="Pegawai" EntitySet="Pegawai" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Periksa_Patient" Association="HospitalModel.Store.FK_Periksa_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Periksa" EntitySet="Periksa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Periksa_Pegawai" Association="HospitalModel.Store.FK_Periksa_Pegawai">
+      <End Role="Pegawai" EntitySet="Pegawai" />
+      <End Role="Periksa" EntitySet="Periksa" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id_Admin" />
+    </Key>
+    <Property Name="Id_Admin" Type="int" Nullable="false" />
+    <Property Name="Id_pegawai" Type="int" />
+    <Property Name="User_name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kamar">
+    <Key>
+      <PropertyRef Name="Id_Room" />
+    </Key>
+    <Property Name="Id_Room" Type="int" Nullable="false" />
+    <Property Name="Nama_Kamar" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Harga_Sewa" Type="int" Nullable="false" />
+    <Property Name="Status_Kamar" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id_Pasien" />
+    </Key>
+    <Property Name="Id_Pasien" Type="int" Nullable="false" />
+    <Property Name="ID_Pegawai" Type="int" />
+    <Property Name="ID_Room" Type="int" />
+    <Property Name="Nama_Pasien" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Penyakit" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Jenis_pasien" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Golongan_Darah" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="Jenis_Kelamin" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Tgl_Lahir" Type="date" Nullable="false" />
+    <Property Name="Alamat_Pasien" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Kota_Pasien" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="No_KTP" Type="int" />
+    <Property Name="No_Hp" Type="int" />
+    <Property Name="Pekerjaan" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Tgl_Masuk" Type="date" />
+    <Property Name="Tgl_Keluar" Type="date" />
+    <Property Name="Tarif_total" Type="int" />
+  </EntityType>
+  <EntityType Name="Pegawai">
+    <Key>
+      <PropertyRef Name="ID_Pegawai" />
+    </Key>
+    <Property Name="ID_Pegawai" Type="int" Nullable="false" />
+    <Property Name="Jenis_Pegawai" Type="varchar" MaxLength="50" />
+    <Property Name="Nama_Pegawai" Type="varchar" MaxLength="50" />
+    <Property Name="Alamat_Pegawai" Type="varchar" MaxLength="50" />
+    <Property Name="Telp_Pegawai" Type="int" />
+    <Property Name="Kota" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Periksa">
+    <Key>
+      <PropertyRef Name="No_Pemeriksaan" />
+    </Key>
+    <Property Name="No_Pemeriksaan" Type="int" Nullable="false" />
+    <Property Name="id_Pegawai" Type="int" />
+    <Property Name="id_Pasien" Type="int" />
+    <Property Name="Penyakit_Akhir" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Tarif" Type="int" Nullable="false" />
+    <Property Name="Status_Rawat" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Admin_Pegawai">
+    <End Role="Pegawai" Type="HospitalModel.Store.Pegawai" Multiplicity="0..1" />
+    <End Role="Admin" Type="HospitalModel.Store.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pegawai">
+        <PropertyRef Name="ID_Pegawai" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="Id_pegawai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Kamar">
+    <End Role="Kamar" Type="HospitalModel.Store.Kamar" Multiplicity="0..1" />
+    <End Role="Patient" Type="HospitalModel.Store.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kamar">
+        <PropertyRef Name="Id_Room" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Pegawai">
+    <End Role="Pegawai" Type="HospitalModel.Store.Pegawai" Multiplicity="0..1" />
+    <End Role="Patient" Type="HospitalModel.Store.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pegawai">
+        <PropertyRef Name="ID_Pegawai" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="ID_Pegawai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Periksa_Patient">
+    <End Role="Patient" Type="HospitalModel.Store.Patient" Multiplicity="0..1" />
+    <End Role="Periksa" Type="HospitalModel.Store.Periksa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="Id_Pasien" />
+      </Principal>
+      <Dependent Role="Periksa">
+        <PropertyRef Name="id_Pasien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Periksa_Pegawai">
+    <End Role="Pegawai" Type="HospitalModel.Store.Pegawai" Multiplicity="0..1" />
+    <End Role="Periksa" Type="HospitalModel.Store.Periksa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pegawai">
+        <PropertyRef Name="ID_Pegawai" />
+      </Principal>
+      <Dependent Role="Periksa">
+        <PropertyRef Name="id_Pegawai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetNewAdminId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetNewKamarId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetNewPatientId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetNewPegawaiId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetNewPeriksaId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

@@ -1,0 +1,31 @@
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\bin\Debug\FP.exe.config
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\bin\Debug\FP.exe
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\bin\Debug\FP.pdb
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\bin\Debug\EntityFramework.dll
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\bin\Debug\EntityFramework.xml
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\obj\Debug\FP.csprojResolveAssemblyReference.cache
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\obj\Debug\FP.Form1.resources
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\obj\Debug\FP.Properties.Resources.resources
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\obj\Debug\FP.csproj.GenerateResource.Cache
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\obj\Debug\FP.exe
+c:\users\ujek fauzy\documents\visual studio 2012\Projects\FP\FP\obj\Debug\FP.pdb
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\bin\Debug\FP.exe.config
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.exe
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.pdb
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.csprojResolveAssemblyReference.cache
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.DataKamar.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.DataPasien.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.DataPegawai.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.DataPemeriksaan.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.DataUser.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.home.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.Login.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.Properties.Resources.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.csproj.GenerateResource.Cache
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\bin\Debug\FP.exe
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\bin\Debug\FP.pdb
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\bin\Debug\EntityFramework.dll
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\bin\Debug\EntityFramework.xml
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.KelolaPasien.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.dataAdmin.resources
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\FP\obj\Debug\FP.BiayaPasien.resources

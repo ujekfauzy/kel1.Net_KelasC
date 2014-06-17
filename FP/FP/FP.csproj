@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{593BCE32-1B3E-45CF-80DC-F68B4AB0B63D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FP</RootNamespace>
+    <AssemblyName>FP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminController.cs" />
+    <Compile Include="BiayaPasien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BiayaPasien.Designer.cs">
+      <DependentUpon>BiayaPasien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataAdmin.Designer.cs">
+      <DependentUpon>dataAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataKamar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataKamar.Designer.cs">
+      <DependentUpon>DataKamar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataPasien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataPasien.Designer.cs">
+      <DependentUpon>DataPasien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataPegawai.Designer.cs">
+      <DependentUpon>DataPegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataPemeriksaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataPemeriksaan.Designer.cs">
+      <DependentUpon>DataPemeriksaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataUser.Designer.cs">
+      <DependentUpon>DataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hospital.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hospital.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Kamar.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KelolaPasien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KelolaPasien.Designer.cs">
+      <DependentUpon>KelolaPasien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasienController.cs" />
+    <Compile Include="Patient.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pegawai.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PegawaiController.cs" />
+    <Compile Include="Periksa.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PeriksaController.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomController.cs" />
+    <EmbeddedResource Include="BiayaPasien.resx">
+      <DependentUpon>BiayaPasien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dataAdmin.resx">
+      <DependentUpon>dataAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataKamar.resx">
+      <DependentUpon>DataKamar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataPasien.resx">
+      <DependentUpon>DataPasien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataPegawai.resx">
+      <DependentUpon>DataPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataPemeriksaan.resx">
+      <DependentUpon>DataPemeriksaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataUser.resx">
+      <DependentUpon>DataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KelolaPasien.resx">
+      <DependentUpon>KelolaPasien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Hospital.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Hospital.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Hospital.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hospital.edmx</DependentUpon>
+      <LastGenOutput>Hospital.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Hospital.edmx.diagram">
+      <DependentUpon>Hospital.edmx</DependentUpon>
+    </None>
+    <None Include="Hospital.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hospital.edmx</DependentUpon>
+      <LastGenOutput>Hospital.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FP.Properties.Settings.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

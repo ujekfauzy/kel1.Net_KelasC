@@ -1,0 +1,5 @@
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\CodedUITestProject1\bin\Debug\CodedUITestProject1.dll
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\CodedUITestProject1\bin\Debug\CodedUITestProject1.pdb
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\CodedUITestProject1\obj\Debug\CodedUITestProject1.csprojResolveAssemblyReference.cache
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\CodedUITestProject1\obj\Debug\CodedUITestProject1.dll
+C:\Users\Rizal\Documents\Visual Studio 2012\Projects\FP\CodedUITestProject1\obj\Debug\CodedUITestProject1.pdb
